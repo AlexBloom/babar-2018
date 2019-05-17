@@ -1,0 +1,90 @@
+/*
+ * Grid System in Sass
+ */
+
+
+ :root {
+   --gutter-width: 1rem;
+   --outer-margin: 2rem;
+   --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
+   --half-gutter-width: calc((var(--gutter-width) * 0.5));
+ }
+
+
+ .container-fluid, .container {
+   margin-right: auto;
+   margin-left: auto;
+   //max-width:96em;
+   padding-right: var(--outer-margin, 2rem);
+   padding-left: var(--outer-margin, 2rem);
+ }
+
+
+
+
+.row{
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: var(--gutter-compensation, -0.5rem);
+  margin-left: var(--gutter-compensation, -0.5rem);
+}
+
+// Set your number of columns.
+$column-count: 12;
+
+
+.col {
+  //float: left;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: var(--half-gutter-width, 0.5rem);
+  padding-left: var(--half-gutter-width, 0.5rem);
+}
+.col-right {
+  //float: right;
+}
+
+// Default media queries
+@for $i from 1 through $column-count{
+	.col-#{$i} {
+		max-width:calc( #{$i} / #{$column-count} * 100% );
+		flex-basis:calc( #{$i} / #{$column-count} * 100% );
+		//margin-left: $gutter;
+	 }
+}
+@for $i from 1 through $column-count{
+  .sm-col-#{$i} {
+     @include breakpoint(s) {
+      max-width:calc( #{$i} / #{$column-count} * 100% );
+			flex-basis:calc( #{$i} / #{$column-count} * 100% );
+     };
+   }
+}
+@for $i from 1 through $column-count{
+  .md-col-#{$i} {
+     @include breakpoint(m) {
+       max-width:calc( #{$i} / #{$column-count} * 100% );
+			 flex-basis:calc( #{$i} / #{$column-count} * 100% );
+     };
+   }
+}
+@for $i from 1 through $column-count{
+   .lg-col-#{$i} {
+     @include breakpoint(l) {
+       max-width:calc( #{$i} / #{$column-count} * 100% );
+			 flex-basis:calc( #{$i} / #{$column-count} * 100% );
+     };
+   }
+}
+@for $i from 1 through $column-count{
+   .xl-col-#{$i} {
+      @include breakpoint(xl) {
+        max-width:calc( #{$i} / #{$column-count} * 100% );
+				flex-basis:calc( #{$i} / #{$column-count} * 100% );
+     };
+   }
+}
