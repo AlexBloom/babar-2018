@@ -40,3 +40,30 @@ $space-l: 2rem;
 $space-xl: 4rem;
 $space-xxl: 8rem;
 $space-xxxl: 16rem;
+
+// Colors
+$color-list: (
+"white" #FFFFFF,
+"black" #000000,
+"blue-90" #091F40,
+"blue-80" #101B42,
+"blue-50" #0045AD,
+"blue-20" #95CEFF,
+"blue-10" #E2F4FF,
+"red-50" #FF0000,
+"yellow-50" #FEF600
+);
+
+@each $value in $color-list {
+  .#{nth($value, 1)} {
+    color: nth($value, 2);
+  }
+
+  .bg-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+  }
+
+  .border-#{nth($value, 1)} {
+    border-color: nth($value, 2);
+  }
+}

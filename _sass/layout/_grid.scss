@@ -15,6 +15,8 @@
    margin-right: auto;
    margin-left: auto;
    //max-width:96em;
+   padding-top: var(--s-xl, 4rem);
+   padding-bottom: var(--s-xl, 4rem);
    padding-right: var(--outer-margin, 2rem);
    padding-left: var(--outer-margin, 2rem);
  }
