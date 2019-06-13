@@ -4,7 +4,15 @@
 "spacing",
 "borders"
 ;
-
+.flex{
+  display: flex;
+  //flex-flow: row wrap;
+  justify-content:center;
+  div{
+    flex: 1;
+    padding:calc(var(--gutter)/2);
+  }
+}
 // HIDE from BASCSS
 .hide {
   position: absolute !important;

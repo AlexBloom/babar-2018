@@ -12,13 +12,24 @@
 
 
  .container-fluid, .container {
+   //position:relative;
    margin-right: auto;
    margin-left: auto;
    //max-width:96em;
-   padding-top: var(--s-xl, 4rem);
-   padding-bottom: var(--s-xl, 4rem);
-   padding-right: var(--outer-margin, 2rem);
-   padding-left: var(--outer-margin, 2rem);
+   //padding-top: var(--s-xl, 4rem);
+   //padding-bottom: var(--s-xl, 4rem);
+   padding-right: $space-l;
+   padding-left: $space-l;
+   @include breakpoint(m){
+     padding-right: 3em;
+     padding-left: 3em;
+   }
+   @include breakpoint(l){
+     padding-right: 12em;
+     padding-left: 12em;
+     padding-right:12vw;
+     padding-left: 12vw;
+   }
  }
 
 
@@ -31,8 +42,8 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  margin-right: var(--gutter-compensation, -0.5rem);
-  margin-left: var(--gutter-compensation, -0.5rem);
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
 }
 
 // Set your number of columns.
@@ -43,8 +54,8 @@ $column-count: 12;
   //float: left;
   box-sizing: border-box;
   flex: 0 0 auto;
-  padding-right: var(--half-gutter-width, 0.5rem);
-  padding-left: var(--half-gutter-width, 0.5rem);
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 .col-right {
   //float: right;
