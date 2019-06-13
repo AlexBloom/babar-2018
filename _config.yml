@@ -1,20 +1,13 @@
 # Site settings
-title: Title
-email:
-author:
-description: 
+title: Bike & Build 2018 Annual Report
+email: info@bikeandbuild.org
+author: Bike and Build
+description: Bike & Build Inc. 2018 Annual Report - Accomplishments & audited financials.
 
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-facebook_username:
-twitter_username:
-instagram_username:
-dribbble_username:
-tumblr_username:
-medium_username:
-github_username:
 
 permalink:
 
