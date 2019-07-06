@@ -78,7 +78,7 @@ h2.blueprint{
 .toggle-button{
   align-self: center;
   display:inline-block;
-  //border-radius:$space-l;
+  border-radius:$space-l;
   margin:$space-l 0;
   padding: $space-s $space-l;
   box-shadow: 0 0 0 2px;
@@ -338,4 +338,20 @@ img{
 .interviewText.hidden{
   opacity:0;
   max-height: 0;
+}
+
+.scrollArrow{
+  display:inline-block;
+  animation: bounce 2s ease infinite ;
+}
+@keyframes bounce{
+  0%{
+    transform:translateX(0);
+  }
+  50%{
+    transform:translateX(1em);
+  }
+  100%{
+    transform:translateX(0);
+  }
 }
