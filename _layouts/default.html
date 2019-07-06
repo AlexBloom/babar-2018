@@ -12,6 +12,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script>
     $(document).ready(function(){
+
       // Logo on Scroll
       var bodyHeight = $("body").height()-$(window).height();
       var scrollRate = (bodyHeight/20);
@@ -23,63 +24,50 @@
         });
       };
 
-      //
-      // $('.expandable').each(function () {
-      // .openExpandable
+      //Expanding classes
+      var showText = "Read +";
+      var hideText = "Hide -";
 
-      // $('.block').click(function() {
-      //   event.preventDefault();
-      //   var tempHeight = $(this).height();
-      //   $(this).parent('.setHeight').css({'height':tempHeight +'px'});
-      //   //console.log(tempHeight);
-      //   $(this).toggleClass('fullScreen');
-      //   $('html').toggleClass('overflow-hidden');
-      //   $(this).parent().toggleClass('setHeight');
-      // });
+      $('.expandableText').each(function () {
+        var text = $(this);
+        text.addClass('hidden');
+        var link = $('<a class="toggleText toggle-button blue-50" href="#">' + showText + '</a>');
+        $(this).before(link);
+        link.click(function (event) {
+          event.preventDefault();
+          text.toggleClass('hidden');
+          if (text.hasClass('hidden')) {
+              $(this).html(showText);
+          } else {
+              $(this).html(hideText);
+          }
 
-      $('.toggleText').click(function() {
-        event.preventDefault();
-        $(this).next().toggleClass('open');
-        $(this).toggleClass('expanded');
+        });
       });
 
 
+      var showInterview = "Read Interview +";
+      var hideInterview = "Hide Interview -";
 
+       $('.interviewText').each(function () {
+         var interview = $(this);
+         interview.addClass('hidden');
+         var interviewLink = $('<a class="toggleText toggle-button blue-50" href="#">' + showInterview + '</a>');
+         $(this).before(interviewLink);
 
-      // $('.block.fullScreen').click(function() {
-      //   $(this).removeClass('fullScreen');
-      //   $('html').removeClass('overflow-hidden');
-      //
-      // });
+        interviewLink.click(function (event) {
+          event.preventDefault();
+          interview.toggleClass('hidden');
+          if (interview.hasClass('hidden')) {
+              $(this).html(showInterview);
+          } else {
+              $(this).html(hideInterview);
+          }
+        });
+      });
 
-      // Expanding classes
-      // var maxheight=88;
-      // var showText = "Read Interview";
-      // var hideText = "Hide Interview";
-
-      // $('.textContainer_Truncate').each(function () {
-      //   var text = $(this);
-      //   if (text.height() > maxheight){
-      //       // text.css({ 'overflow': 'hidden','height': maxheight + 'px' });
-      //       text.addClass('max-height-0');
-      //       var link = $('<a class="navy" href="#">' + showText + '</a>');
-      //       var linkDiv = $('<div></div>');
-      //       linkDiv.append(link);
-      //       $(this).after(linkDiv);
-      //
-      //       link.click(function (event) {
-      //         event.preventDefault();
-      //         if (text.height() > maxheight) {
-      //             $(this).html(showText);
-      //             text.addClass('max-height-0');
-      //         } else {
-      //             $(this).html(hideText);
-      //             text.removeClass('max-height-0');
-      //         }
-      //       });
-      //   }
-      // });
     });
+
   </script>
 
 </html>

@@ -65,12 +65,63 @@ h2.blueprint{
       opacity:.1;
     }
 }
+
+.button{
+
+}
 .floating-button{
-  transform: translateY(-2rem);
-  align-self: center;
-  background-color: white;
+
+  //transform: translateY(-2rem);
+  //background-color: white;
 }
 
+.toggle-button{
+  align-self: center;
+  display:inline-block;
+  //border-radius:$space-l;
+  margin:$space-l 0;
+  padding: $space-s $space-l;
+  box-shadow: 0 0 0 2px;
+  text-decoration:none;
+  transition: all .1s;
+  background-color:transparent;
+  &:hover{
+    //border: 2px solid;
+    text-decoration:none;
+    //box-shadow: 0 16px 32px -8px rgba(0,0,0,.15);
+    //transform: translateY(-1px);
+  }
+}
+.external-cta{
+  border: 2px solid;
+  display:inline-block;
+  border-radius:$space-l;
+  padding: $space-m $space-xl $space-m $space-l;
+  text-decoration:none;
+  transition:all .1s ease-in-out;
+  position:relative;
+  .arrow{
+    border:2px solid transparent;
+    box-shadow: 0 0 0 2px ;
+    border-radius:$space-l;
+    //border: 2px dotted;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: middle;
+    line-height: 2;
+    font-size: 1.5em;
+    transition: all .1s ease-in-out;
+  }
+  &:hover{
+    //background-color:rgba(255,255,255,.1);
+    .arrow{
+      transform: rotate(-45deg);
+    }
+  }
+}
 
 // CUSTOM TYPOGRAPHY
 .list-style-none{
@@ -201,16 +252,6 @@ img{
 }
 
 
-.button{
-  display:inline-block;
-  border-radius:$space-l;
-  padding: $space-m $space-l;
-  border: 2px solid;
-  text-decoration:none;
-  &:hover{
-    text-decoration:none;
-  }
-}
 
 
 
@@ -287,12 +328,14 @@ img{
   background-color:#E2F4FF;
   border:0;
 }
-.expandableText{
-  opacity:0;
-  max-height: 0;
+.expandableText,
+.interviewText{
+  max-height: 100%;
+  opacity: 1;
   transition: all .15s ease;
 }
-.expandableText.open{
-  max-height:100%;
-  opacity:1;
+.expandableText.hidden,
+.interviewText.hidden{
+  opacity:0;
+  max-height: 0;
 }
